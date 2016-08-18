@@ -98,9 +98,9 @@ function get_netflow_stat(i, j){
 		        },
 		        calculable : true,
 		        grid : {
-		        		x:40,
+		        		x:60,
 		        		y:4,
-		        		x2:1,
+		        		x2:10,
 		        		y2:20
 		        },
 		        xAxis : [
