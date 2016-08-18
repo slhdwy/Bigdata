@@ -112,6 +112,11 @@ function get_netflow_stat(i, j){
 		        ],
 		        yAxis : [
 		            {
+		            	axisLabel:{
+							formatter: function(y) {
+								return num2e(y);
+							}
+		           		},
 		                type : 'value'
 		            }
 		        ],
@@ -159,4 +164,12 @@ function get_netflow_stat(i, j){
 function jump(param) {
 
 	window.location.href="dashboard.html";
+}
+function num2e(num){
+	if(num == 0){
+		return num;
+	}
+    var p = Math.floor(Math.log(num)/Math.LN10);
+    var n = num / Math.pow(10, p);
+    return n + 'x10^' + p;
 }
