@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="../js/index2_title_username.js"></script>
+
+    <title>测量大数据分析管理平台</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="../dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    
+
+</head>
+
+<body>
+
+	<!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript 
+    <script src="../bower_components/raphael/raphael-min.js"></script>
+    <script src="../bower_components/morrisjs/morris.min.js"></script>
+    <script src="../js/morris-data.js"></script>   -->
+    
+    <script src="../js/bootstrap-datetimepicker.js"></script>
+    <script src="../js/bootstrap-datetimepicker.zh-CN.js"></script>
+    
+    <script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+      　   minView: "month", //选择日期后，不会再跳转去选择时分秒 
+    　　format: "yyyymmdd", //选择日期后，文本框显示的日期格式 
+    　　language: 'zh-CN', //汉化 
+    　　autoclose:true //选择日期后自动关闭 
+    });
+    </script> 
+    
+    <script src="../js/collect.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            
+            <div class="navbar-brand" id="title-wrapper">         		 
+			 <script>                                      
+			    titleusername();//调用js的函数
+    		 </script>
+    		 </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>                   
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+				</li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                <!--    <li>
+                            <a href="index.html">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> 流量监控界面
+                                    <span class="pull-right text-muted small">运行人员</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>      --> 
+                        <li>
+                            <a href="index2.html">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 流量数据管理界面
+                                    <span class="pull-right text-muted small">研究人员</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                <!--    <li>
+                            <a href="index3.html">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> 集群管理界面
+                                    <span class="pull-right text-muted small">管理人员</span>
+                                </div>
+                            </a>
+                        </li>      -->                     
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="user_info.html"><i class="fa fa-user fa-fw"></i> 用户信息</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> 注销</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">                        
+                        <li>
+                            <a href="index2.html"><i class="fa fa-dashboard fa-fw"></i> 首页<span class="fa arrow"></span></a>                            
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> 数据集<span class="fa arrow"></span></a>   
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="dataset_page.html">标准数据集</a>
+                                </li>
+                                <li>
+                                    <a href="dataset_mypage.html">我的数据集</a>                                   
+                                </li>                                
+                            </ul>                         
+                        </li>
+                        <li>
+                           	<a href="collect_dataset.html"><i class="fa fa-table fa-fw"></i> 采集申请<span class="fa arrow"></span></a> 
+                        </li>                       
+                        <li>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> 应用<span class="fa arrow"></span></a> 
+                        </li>                        
+                        <li>
+                            <a href="#"><i class="fa fa-gear fa-fw"></i> 设置<span class="fa arrow"></span></a>                           
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">数据集采集</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form" method="post">
+                                      <fieldset>
+                                        <div class="form-group">
+                                          <div class= "row">
+                                            <div class="col-sm-6">
+                                               <label> 用户名</label> 
+                                               <input class="form-control" id="username" name="username" type="text" value="">                                            
+                                            </div>
+                                            <div class="col-sm-6">
+                                               <label>数据集名称</label> 
+                                               <input class="form-control" id="datasetname" type="text" value="">                                            
+                                            </div>
+                                           </div>
+                                         </div>
+                                         
+                                        <div class="form-group">
+                                          <div class= "row">
+                                            <div class="col-sm-3">
+                                               <div class="input-append date form_datetime" data-picker-position="bottom-left">
+                                            		<label>起始日期</label>
+                                            		<input class="form-control" type="text" id="date" readonly="" value="" size="16">
+                                           		    <span class="add-on"><i class="icon-th"></i></span>
+                                           	   </div>
+                                           	</div>
+                                           	<div class="col-sm-3">  
+                                           	        <label>起始时间</label>                                         	 
+                                                    <select class="form-control" id="time" value="">                                          
+                                                	<option>00:00</option>
+                                                	<option>01:00</option>
+                                                	<option>02:00</option>
+                                                	<option>03:00</option>
+                                                	<option>04:00</option>
+                                                	<option>05:00</option>
+                                                	<option>06:00</option>
+                                                	<option>07:00</option>
+                                                	<option>08:00</option>
+                                                	<option>09:00</option>
+                                                	<option>10:00</option>
+                                               	 	<option>11:00</option>
+                                                	<option>12:00</option>
+                                                	<option>13:00</option>
+                                                	<option>14:00</option>
+                                                	<option>15:00</option>
+                                                	<option>16:00</option>
+                                                	<option>17:00</option>
+                                                	<option>18:00</option>
+                                                	<option>19:00</option>
+                                                	<option>20:00</option>
+                                                	<option>21:00</option>
+                                                	<option>22:00</option>
+                                                	<option>23:00</option>
+                                                   </select>                                       
+                                           	</div> 
+                                           	<div class="col-sm-3">
+                                           	    <label>采集时长</label>                                        
+                                                <select class="form-control" id="duration">                                          
+                                                <option>1 Hour</option>
+                                                <option>2 Hours</option>
+                                                <option>3 Hours</option>
+                                                <option>5 Hours</option>
+                                                <option>12 Hours</option>
+                                                <option>24 Hours</option>
+                                                </select>
+                                           	</div> 
+                                           	<div class="col-sm-3">
+                                           	    <label>采集周期</label>                                        
+                                                <select class="form-control" id="period">                                          
+                                                <option>1 Day</option>
+                                                <option>1 Week</option>
+                                                <option>1 Month</option>                                                                                         
+                                                </select>
+                                           	</div>  
+                                         </div>                                          
+                                       </div>
+                                         
+                                        <div class="form-group">
+                                          <div class="row">
+                                             
+                                              <div class="col-sm-4">
+                                                <label>采集链路</label>
+                                            	<select class="form-control" id="link" type="text" value="">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option> 
+                                                <option>5</option>                                                                                               
+                                           		</select>
+                                              </div>
+                                              <div class="col-sm-4">
+                                                <label>采集编号</label>
+                                            	<select class="form-control" id="num" type="text" value="">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>                                                                                                                                               
+                                           		</select>
+                                              </div>
+                                              
+                                              <div class="col-sm-4">
+                                              <label>协议类型</label>
+                                                <select class="form-control" id="pro" type="text" value="">
+                                                <option>no</option>
+                                                <option>Tcp</option>
+                                                <option>Udp</option>
+                                                                                               
+                                                </select>
+                                              </div>
+                                          </div>
+                                            
+                                        </div>  
+                                         
+                                         <div class="form-group">
+                                           <div class="row">
+                                              <div class="col-sm-6">
+                                                  <label>源端口号</label> 
+                                                  <input class="form-control" placeholder="0-65536" id="srcport" type="text" value="">
+                                              </div>
+                                              <div class="col-sm-6">
+                                                  <label>目的端口号</label> 
+                                                  <input class="form-control" placeholder="0-65536" id="dstport" type="text" value="">                                            
+                                              </div>                                             
+                                            </div>                                                                                    
+                                         </div>
+                                        
+                                        <div class="form-group">
+                                           
+                                           <div class="row">
+                                              <div class="col-sm-6">
+                                                  <label>源IP </label>                                                                                                    
+                                                  <input class="form-control" placeholder="空位补0" id="srcip" type="text" value="">
+                                             </div>
+                                             <div class="col-sm-6">
+                                                  <label>目的IP </label>                                                                                                    
+                                                  <input class="form-control" placeholder="空位补0" id="dstip" type="text" value="">                                            
+                                             </div>                                                                                
+                                           </div>  
+                                           <div class="row">
+                                              <div class="col-sm-12">
+                                                   <h6>* IP地址请按以下格式填写 aaaa:bbbb:cccc:dddd:eeee:ffff:gggg:hhhh(空位补0)</h6>
+                                              </div>                                                 
+                                           </div>                                             
+                                        </div>                                       
+                                                                                                                                  
+                                        <a type="button"  class="btn btn-lg btn-success btn-block" onClick="collectrequest();">提交</a> 
+                                      </fieldset>                                  
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->                               
+                               
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                   </div>
+                </div>
+                <!-- /.col-lg-12 -->
+              </div>
+              
+              <div class="row">
+                <div class="col-lg-12">
+                   <div class="well">
+                       <h4 class="page-header">数据集采集参数填写说明</h4>
+                       <p>1. 必须填写数据集名称、用户名、采集日期、采集时间、采集时长及周期、采集链路、编号。</p>
+                       <p>2. 采集时长为一次采集数据的时长，如2小时意为采集时间戳为采集日期及采集时间起始2小时之内的流量数据。</p>
+                       <p>3. 采集周期为采集该数据集的持续时间。如1周意为从采集日期开始持续7天从采集时间起始采集一定时长的数据。</p>
+                       <p>4. 流量数据来自CNGI-CERNET2（IPV6）网络，共5条10Gb/s链路，采集计划需要确定采集数据出自哪一条链路；我们将1条10G链路按IP地址哈希成了4个采集节点，每个采集节点采集2.5Gb/s流量，用户需要确定采集节点进行相应数据的采集。</p>
+                       <p>5. 过滤条件（协议、源端口、目的端口、源IP、目的IP）可根据需要进行设置，填写时请注意相应格式。</p>
+                   </div>                    
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->  
+                      
+            
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    
+</body>
+
+</html>
+
+

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="../js/index2_title_username.js"></script>
+    <title>测量大数据分析管理平台</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="../dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+	<script src="../js/jquery.blockUI.js"></script>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+             <div class="navbar-brand" id="title-wrapper">         		 
+			 <script>                                      
+			    titleusername();//调用js的函数
+    		 </script>
+    		 </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>                   
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+				</li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="netflow_dashboard.html">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> 流量监控界面
+                                    <span class="pull-right text-muted small">运行人员</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="index2.html">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 流量数据管理界面
+                                    <span class="pull-right text-muted small">研究人员</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="index3.html">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> 集群管理界面
+                                    <span class="pull-right text-muted small">管理人员</span>
+                                </div>
+                            </a>
+                        </li>                       
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="user_info_admin.html"><i class="fa fa-user fa-fw"></i> 用户信息</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> 注销</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">                        
+                        <li>
+                            <a href="index3.html"><i class="fa fa-dashboard fa-fw"></i> 集群总览<span class="fa arrow"></span></a>                           
+			    <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="cluster_overview.html">物理集群监控</a>
+                                </li>
+                                <li>
+                                    <a href="cluster.html">应用集群监控</a>
+                                </li>
+                            </ul>
+ 
+                        </li>
+                        <li>    
+		 	    <a href="index3.html"><i class="fa fa-dashboard fa-fw"></i>任务管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="storm_task.html">storm集群</a>
+                                </li>
+                                <li>
+                                    <a href="hadoop_task.html">hadoop集群</a>
+                                </li>
+                            </ul>
+
+			</li>
+		        <li>
+                            <a href="index3.html"><i class="fa fa-dashboard fa-fw"></i> 日志管理<span class="fa arrow"></span></a>
+			    <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="log1.html">File Logs</a>
+                                </li>
+                                <li>
+                                    <a href="log2.html">Event Logs</a>
+                                </li>
+                                <li>
+                                     <a href="log3.html">Charts&Reports</a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li>
+                            <a href="datasetmanagement.html"><i class="fa fa-th fa-fw"></i> 数据集管理<span class="fa arrow"></span></a> 
+                        </li> 
+                        <li>
+                            <a href="usermanagement.html"><i class="glyphicon glyphicon-user"></i> 用户管理<span class="fa arrow"></span></a> 
+                        </li>    
+                        <li>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> 报表<span class="fa arrow"></span></a> 
+                        </li>                      
+                        <li>
+                            <a href="#"><i class="fa fa-gear fa-fw"></i> 设置<span class="fa arrow"></span></a>                           
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper"><!--sssssssssssssssssssssssssssss -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">File Logs</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Storm
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="dataTable_wrapper">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>ip address</th>
+                                            <th>type</th>
+                                            <th>nimbus/supervisor</th>
+                                            <th>action</th>
+					    <th>search</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:7</td>
+                                            <td>storm</td>
+                                            <td>nimbus</td>
+                                            <td>
+                                            	<a href="javascript:;">look</a>
+                                     	    </td>
+                                            <td class="my">
+  						<input id="_texta1" type="text" value="yyyy-mm-dd"/>
+ 					          <a href="javascript:;">search</a>
+					    </td>
+                                        </tr>
+                                        <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:7</td>
+                                            <td>storm</td>
+                                            <td>supervisor</td>
+                                            <td>
+                                            	<a href="javascript:;">look</a>                                     	
+					    </td>
+					    <td class="my">
+                                                <input id="_texta2" type="text" value="yyyy-mm-dd" />
+                                                <a href="javascript:;">search</a> 
+                                            </td>
+                                         </tr>
+					 <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:8</td>
+                                            <td>storm</td>
+                                            <td>nimbus</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_texta3" type="text" value="yyyy-mm-dd"/>
+                                                  <a href="javascript:;">search</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:8</td>
+                                            <td>storm</td>
+                                            <td>supervisor</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_texta4" type="text" value="yyyy-mm-dd" />
+                                                <a href="javascript:;">search</a>
+                                            </td>
+                                        </tr>
+					 <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:9</td>
+                                            <td>storm</td>
+                                            <td>nimbus</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_texta5" type="text" value="yyyy-mm-dd"/>
+                                                  <a href="javascript:;">search</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:9</td>
+                                            <td>storm</td>
+                                            <td>supervisor</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_texta6" type="text" value="yyyy-mm-dd" />
+                                                <a href="javascript:;">search</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->                          
+                        </div>
+                        <!-- /.panel-body -->
+                  
+<div class="panel-heading">
+                            Hadoop
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="dataTable_wrapper">
+                                <table class="table table-striped table-bordered table-hover table-add" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>ip address</th>
+                                            <th>type</th>
+					    <th>filename</th>
+                                            <th>action</th>
+					    <th>search</th>
+                                        </tr>
+                                    </thead>
+                                     <tbody>
+                                        <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:7</td>
+                                            <td>hadoop</td>
+					    <td>DataNode</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_textb1" type="text" value="yyyy-mm-dd"/>
+                                                  <a href="javascript:;">search</a>
+                                            </td>
+                                        </tr>
+					 <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:7</td>
+                                            <td>hadoop</td>
+                                            <td>NameNode</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_textb2" type="text" value="yyyy-mm-dd"/>
+                                                  <a href="javascript:;">search</a>
+                                            </td>
+                                        </tr>
+					 <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:7</td>
+                                            <td>hadoop</td>
+                                            <td>SecondaryNameNode</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_textb3" type="text" value="yyyy-mm-dd"/>
+                                                  <a href="javascript:;">search</a>
+                                            </td>
+                                        </tr>
+					 <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:8</td>
+                                            <td>hadoop</td>
+                                            <td>DataNode</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_textb4" type="text" value="yyyy-mm-dd"/>
+                                                  <a href="javascript:;">search</a>
+                                            </td>
+					</tr>
+                                        <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:8</td>
+                                            <td>hadoop</td>
+					    <td>NameNode</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>                                             
+                                            </td>
+					    <td class="my">
+                                                <input id="_textb5" type="text" value="yyyy-mm-dd" />
+                                                <a href="javascript:;">search</a>
+                                            </td>
+                                        </tr>
+					 <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:8</td>
+                                            <td>hadoop</td>
+                                            <td>SecondaryNameNode</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_textb6" type="text" value="yyyy-mm-dd" />
+                                                <a href="javascript:;">search</a>
+                                            </td>
+                                        </tr>
+					 <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:9</td>
+                                            <td>hadoop</td>
+                                            <td>DataNode</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_textb7" type="text" value="yyyy-mm-dd" />
+                                                <a href="javascript:;">search</a>
+                                            </td>
+                                        </tr>
+					 <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:9</td>
+                                            <td>hadoop</td>
+                                            <td>NameNode</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_textb8" type="text" value="yyyy-mm-dd" />
+                                                <a href="javascript:;">search</a>
+                                            </td>
+                                        </tr>
+
+					 <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:9</td>
+                                            <td>hadoop</td>
+					    <td>SecondaryNameNode</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_textb9" type="text" value="yyyy-mm-dd" />
+                                                <a href="javascript:;">search</a>
+                                            </td>
+
+                                        </tr>
+					 <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:10</td>
+                                            <td>hadoop</td>
+					    <td>DataNode</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_textb10" type="text" value="yyyy-mm-dd" />
+                                                <a href="javascript:;">search</a>
+                                            </td>
+                                        </tr>
+					  <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:10</td>
+                                            <td>hadoop</td>
+                                            <td>NameNode</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_textb11" type="text" value="yyyy-mm-dd" />
+                                                <a href="javascript:;">search</a>
+                                            </td>
+                                        </tr>
+
+                                         <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:9</td>
+                                            <td>hadoop</td>
+                                            <td>SecondaryNameNode</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_textb12" type="text" value="yyyy-mm-dd" />
+                                                <a href="javascript:;">search</a>
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+ 			    <!-- /.table-responsive -->                          
+                        </div>
+                        <!-- /.panel-body -->
+<div class="panel-heading">
+                            ZooKeeper
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="dataTable_wrapper">
+                                <table class="table table-striped table-bordered table-hover table-add" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>ip address</th>
+                                            <th>type</th>
+                                            <th>action</th>
+					    <th>search</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:7</td>
+                                            <td>zookeeper</td>
+					    <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+					    <td class="my">
+                                                <input id="_textc1" type="text" value="yyyy-mm-dd" />
+                                                <a href="javascript:;">search</a>
+                                            </td>
+
+                                        </tr>
+                                        <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:8</td>
+                                            <td>zookeeper</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+					    <td class="my">
+                                                <input id="_textc2" type="text" value="yyyy-mm-dd" />
+                                                <a href="javascript:;">search</a>
+                                            </td>
+                                        </tr>
+					 <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:9</td>
+                                            <td>zookeeper</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_textc3" type="text" value="yyyy-mm-dd" />
+                                                <a href="javascript:;">search</a>
+                                            </td>
+
+                                        </tr>
+                                        <tr class="gradeU">
+                                            <td>2001:da8:a0:500::1:10</td>
+                                            <td>zookeeper</td>
+                                            <td>
+                                                <a href="javascript:;">look</a>
+                                            </td>
+                                            <td class="my">
+                                                <input id="_textc4" type="text" value="yyyy-mm-dd" />
+                                                <a href="javascript:;">search</a>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+ 			    <!-- /.table-responsive -->                          
+                        </div>
+                        <!-- /.panel-body -->
+
+
+		    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+       
+        </div>
+        <!-- /#page-wrapper -->
+
+    <!--/div-->
+    <!-- /#wrapper -->
+
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+                responsive: true
+        });
+	
+        $('table a:first').click(function(){
+        	$.ajax({
+                url:"http://[2001:da8:a0:500::1:9]:8089/LogManagement/?type=1",
+ 		crossDomain:true,
+                dataType: 'JSONP',
+		type:'GET',
+                jsonCallback: 'callback',        		
+		success:function(result){
+		
+		var log_old=result.log;
+       	 	var reg=/\n/g;
+        	log=log_old.replace(reg,"<br>");
+		$.blockUI({
+        		message:"<div><p>"+log+"</p><p><button id='btn'>close</button></p></div>",
+                        css:{
+                                padding:0,
+                                margin:0,
+                                width:"1000px",
+                                height:"500px",
+                                top:"100px",
+                                left:"150px",
+                                overflow:"auto",
+                                textAlign:"left",
+                                border:"3px solid #aaa",
+                                backgroundColor:"#fff",
+                                cursor:"pointer"
+                        },
+        			});
+        			$("button#btn").click(function(){
+        				$.unblockUI();
+        			});
+        		}.bind(this),
+        		error: function (xhr, status, err) {
+        		    alert('Error:' + err);
+        		    alert("error");
+        		}.bind(this)
+        	});
+	 });
+	
+        $('table a').eq(1).click(function(){
+	    var riqi;
+            riqi=$('#_texta1').val();//纯js获取
+            $.ajax({
+                url:"http://[2001:da8:a0:500::1:9]:8089/LogManagement/?type=3&tim="+riqi,
+		crossDomain:true,
+                dataType: 'JSONP',
+		type:'GET',
+		jsonCallback: 'callback',
+                success:function(result){
+		
+		var log_old=result.log;
+        	var reg=/\n/g;
+        	log=log_old.replace(reg,"<br>");
+
+                    $.blockUI({
+                        message:"<div><p>"+log+"</p><p><button id='btn'>close</button></p></div>",
+                        css:{
+                                padding:0,
+                                margin:0,
+                                width:"1000px",
+                                height:"500px",
+                                top:"100px",
+                                left:"150px",
+                                overflow:"auto",
+                                textAlign:"left",
+                                border:"3px solid #aaa",
+                                backgroundColor:"#fff",
+                                cursor:"pointer"
+                        },
+                    });
+                    $("button#btn").click(function(){
+                        $.unblockUI();
+                    });
+                }.bind(this),
+                error: function (xhr, status, err) {
+                    alert('Error:' + err);
+                    alert("error");
+                }.bind(this)
+            });
+
+        });
+   	$('table a').eq(2).click(function(){
+            $.ajax({
+                url:"http://[2001:da8:a0:500::1:9]:8089/LogManagement/?type=2",
+        	crossDomain:true,
+                dataType: 'JSONP',
+       		type:'GET',
+       		jsonCallback: 'callback',
+                success:function(result){
+        	
+		var log_old=result.log;
+		var reg=/\n/g;
+		log=log_old.replace(reg,"<br>");
+
+                    $.blockUI({
+                        message:"<div><p>"+log+"</p><p><button id='btn'>close</button></p></div>",
+                        css:{
+                                padding:0,
+                                margin:0,
+                                width:"1000px",
+                                height:"500px",
+                                top:"100px",
+                                left:"150px",
+                                overflow:"auto",
+                                textAlign:"left",
+                                border:"3px solid #aaa",
+                                backgroundColor:"#fff",
+                                cursor:"pointer"
+                        },
+                    });
+                    $("button#btn").click(function(){
+                        $.unblockUI();
+                    });
+                }.bind(this),
+                error: function (xhr, status, err) {
+                    alert('Error:' + err);
+                    alert("error");
+                }.bind(this)
+            });
+
+        });
+
+
+
+
+
+
+        $("div#dataTables-example_wrapper div.row").eq(0).hide()//css("display","none")
+        //show search
+        $("div#dataTables-example_wrapper div.row").eq(2).hide();
+        //page  result
+
+
+
+
+
+
+	});
+    </script>
+
+</body>
+
+</html>                        

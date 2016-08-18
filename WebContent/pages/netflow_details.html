@@ -1,0 +1,583 @@
+    <!DOCTYPE html>
+    <html lang="ch">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>测量大数据分析管理平台</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+        <!-- Timeline CSS -->
+        <link href="../dist/css/timeline.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+        <!-- Morris Charts CSS -->
+        <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif] get_netflow_trasport(), get_netflow_application(), get_netflow_network(), -->
+
+    </head>
+
+    <body onload="get_netflow_application(1)">
+
+ 		<!-- jQuery -->
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+        <!-- Morris Charts JavaScript -->
+        <script src="../bower_components/raphael/raphael-min.js"></script>
+        <script src="../bower_components/morrisjs/morris.min.js"></script>
+        
+        <script src="../js/echarts.js"></script>
+        <script src="../js/jquery.blockUI.js"></script>
+
+        <!-- DataTables JavaScript -->
+        <script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+        <script src="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+    	<script src="../js/index2_title_username.js"></script>
+        <script src="../js/netflow_transport_results.js" async></script>
+        <script src="../js/netflow_application_results.js" async></script>
+        <script src="../js/netflow_network_results.js" async></script>
+        <script src="../js/netflow_stat.js"></script>
+
+        <!-- script src="../js/my-panels.js"></script-->
+
+        <!-- Custom Theme JavaScript -->
+        <script src="../dist/js/sb-admin-2.js"></script>
+
+        
+        
+        <div id="wrapper">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-brand" id="title-wrapper">         		 
+			 	<script>                                      
+			    	titleusername();//调用js的函数
+    		 	</script>
+    		 	</div>
+                <!-- /.navbar-header -->
+
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        </a>                   
+                    </li>
+                    <!-- /.dropdown -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        </a>
+    				</li>
+                    <!-- /.dropdown -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a href="netflow_dashboard.html">
+                                    <div>
+                                        <i class="fa fa-comment fa-fw"></i> 流量监控界面
+                                        <span class="pull-right text-muted small">运行人员</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+             <!--           <li>
+                                <a href="index2.html">
+                                    <div>
+                                        <i class="fa fa-twitter fa-fw"></i> 流量数据管理界面
+                                        <span class="pull-right text-muted small">研究人员</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li> 
+                                <a href="index3.html">
+                                    <div>
+                                        <i class="fa fa-envelope fa-fw"></i> 集群管理界面
+                                        <span class="pull-right text-muted small">管理人员</span>
+                                    </div>
+                                </a>
+                            </li>       -->                        
+                        </ul>
+                        <!-- /.dropdown-alerts -->
+                    </li>
+                    <!-- /.dropdown -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="user_info_operator.html"><i class="fa fa-user fa-fw"></i> 用户信息</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> 注销</a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-user -->
+                    </li>
+                    <!-- /.dropdown -->
+                </ul>
+                <!-- /.navbar-top-links -->
+
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">                        
+                            <li>
+                                <a href="#"><i class="fa fa-dashboard fa-fw"></i> 仪表盘<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="netflow_dashboard.html">Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <a href="netflow_monitor.html">Monitor</a>
+                                    </li>  
+                                    <li>
+                                        <a href="netflow_details.html">Details</a>
+                                    </li>                                
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 资源清单<span class="fa arrow"></span></a>                            
+                            </li>
+                            <li>
+                               	<a href="#"><i class="fa fa-table fa-fw"></i> 应用<span class="fa arrow"></span></a> 
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-edit fa-fw"></i> 取证<span class="fa arrow"></span></a> 
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-wrench fa-fw"></i> 攻击<span class="fa arrow"></span></a>                           
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-sitemap fa-fw"></i> 告警<span class="fa arrow"></span></a>                           
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-files-o fa-fw"></i> 报表<span class="fa arrow"></span></a>                           
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="query_netflow.html">查询报表</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">更多</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-second-level -->
+    			            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-gear fa-fw"></i> 设置<span class="fa arrow"></span></a>                           
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.sidebar-collapse -->
+                </div>
+                <!-- /.navbar-static-side -->
+            </nav>
+
+
+            <div id="page-wrapper">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="page-header">链路详细信息监控</h2>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">应用层统计</div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                
+                                <div class="panel-body" id="div1">
+                                    <div id="application-chart" style="height: 300px;width:auto"></div>
+                                </div>
+                                
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form role="form" method="post">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class= "row">
+                                            <div class="col-sm-1"></div>
+                                            <div class="col-sm-2">
+                                               <label>链路</label> 
+                                               <select class="form-control" id="select_router_application"  onChange="get_netflow_application(0)">
+                                                    <option value="0">ALL</option>
+                                                    <option value="1">THU</option>
+                                                    <option value="2">PKU</option>
+                                                    <option value="3">BUPT</option>
+                                                    <option value="4">BUAA</option>
+                                                    <option value="5">Fudan</option>
+                                                    <option value="6">HUST</option>
+                                                    <option value="7">Tongji</option>
+                                                    <option value="8">CQU</option>
+                                                    <option value="9">CSU</option>
+                                                    <option value="10">DLUT</option>
+                                                    <option value="11">HIT</option>
+                                                    <option value="12">JLU</option>
+                                                    <option value="13">LZU</option>
+                                                    <option value="14">NEU</option>
+                                                    <option value="15">SCUT</option>
+                                                    <option value="16">SDU</option>
+                                                    <option value="17">SEU</option>
+                                                    <option value="18">SJTU</option>
+                                                    <option value="19">TJU</option>
+                                                    <option value="20">UESTC</option>
+                                                    <option value="21">USTC</option>
+                                                    <option value="22">XJTU</option>
+                                                    <option value="23">XMU</option>
+                                                    <option value="24">ZJU</option>
+                                                    <option value="25">ZZU</option>
+                                                </select>          
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label>单位</label> 
+                                                <select class="form-control" id="select_type_application" onChange="get_netflow_application(0)">
+                                                    <option value="1">fps</option>
+                                                    <option value="2">pps</option>
+                                                    <option value="3">bps</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label>协议类型</label> 
+                                                <select class="form-control" id="select_protocol_application" onChange="get_netflow_application(0)">
+                                                    <option value="0">ALL</option>
+                                                    <option value="1">HTTP</option>
+                                                    <option value="2">DNS</option>
+                                                    <option value="3">TELNET</option>
+                                                    <option value="4">HTTPS</option>
+                                                    <option value="5">POP3</option>
+                                                    <option value="6">SMTP</option>
+                                                    <option value="7">FTP</option>
+                                                    <option value="8">TFTP</option>
+                                                    <option value="9">IMAP</option>
+                                                    <option value="10">OTHER</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label>时间跨度</label> 
+                                                <select class="form-control" id="select_period_application" onChange="get_netflow_application(0)">
+                                                    <option value="0">实时</option>
+                                                    <option value="1">一天</option>
+                                                    <option value="2">一周</option>
+                                                    <option value="3">一月</option>
+                                                    <option value="4">一年</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                               <label>起始时间</label> 
+                                               <input class="form-control" type="text" value="2012-05-15" id="datetimepicker_application">
+                                               <span class="add-on"><i class="icon-th"></i></span>
+                                            </div>
+                                            <div class="col-sm-1"></div>
+                                        </div>
+                                     </div>
+                                </fieldset>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 链路 单位 时间长度 起始日期/.row -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">网络层统计</div>
+                     <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                
+                                <div class="panel-body">
+                                    <div id="network-chart" style="height: 300px;width:auto"></div>
+                                </div>
+                                <!-- /.panel-body -->
+                                
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form role="form" method="post">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class= "row">
+                                            <div class="col-sm-1"></div>
+                                            <div class="col-sm-2">
+                                               <label>链路</label> 
+                                               <select class="form-control" id="select_router_network"  onChange="get_netflow_network(0)">
+                                                    <option value="0">ALL</option>
+                                                    <option value="1">THU</option>
+                                                    <option value="2">PKU</option>
+                                                    <option value="3">BUPT</option>
+                                                    <option value="4">BUAA</option>
+                                                    <option value="5">Fudan</option>
+                                                    <option value="6">HUST</option>
+                                                    <option value="7">Tongji</option>
+                                                    <option value="8">CQU</option>
+                                                    <option value="9">CSU</option>
+                                                    <option value="10">DLUT</option>
+                                                    <option value="11">HIT</option>
+                                                    <option value="12">JLU</option>
+                                                    <option value="13">LZU</option>
+                                                    <option value="14">NEU</option>
+                                                    <option value="15">SCUT</option>
+                                                    <option value="16">SDU</option>
+                                                    <option value="17">SEU</option>
+                                                    <option value="18">SJTU</option>
+                                                    <option value="19">TJU</option>
+                                                    <option value="20">UESTC</option>
+                                                    <option value="21">USTC</option>
+                                                    <option value="22">XJTU</option>
+                                                    <option value="23">XMU</option>
+                                                    <option value="24">ZJU</option>
+                                                    <option value="25">ZZU</option>
+                                                </select>          
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label>单位</label> 
+                                                <select class="form-control" id="select_type_network" onChange="get_netflow_network(0)">
+                                                    <option value="1">fps</option>
+                                                    <option value="2">pps</option>
+                                                    <option value="3">bps</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label>源/目的国</label> 
+                                                <select class="form-control" id="select_country_network" onChange="get_netflow_network(0)">
+                                                    <option value="0">Src ALL</option>
+                                                    <option value="1">Src CHINA</option>
+                                                    <option value="2">Src RUSSIA</option>
+                                                    <option value="3">Src CANADA</option>
+                                                    <option value="4">Src GERMANY</option>
+                                                    <option value="5">Src JAPAN</option>
+                                                    <option value="6">Src US</option>
+                                                    <option value="7">Src UK</option>
+                                                    <option value="8">Src INDIA</option>
+                                                    <option value="9">Src HK</option>
+                                                    <option value="10">Src OTHER</option>
+                                                    <option value="-1">Dst ALL</option>
+                                                    <option value="11">Dst CHINA</option>
+                                                    <option value="12">Dst RUSSIA</option>
+                                                    <option value="13">Dst CANADA</option>
+                                                    <option value="14">Dst GERMANY</option>
+                                                    <option value="15">Dst JAPAN</option>
+                                                    <option value="16">Dst US</option>
+                                                    <option value="17">Dst UK</option>
+                                                    <option value="18">Dst INDIA</option>
+                                                    <option value="19">Dst HK</option>
+                                                    <option value="20">Dst OTHER</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label>时间跨度</label> 
+                                                <select class="form-control" id="select_period_network" onChange="get_netflow_network(0)">
+                                                    <option value="0">实时</option>
+                                                    <option value="1">一天</option>
+                                                    <option value="2">一周</option>
+                                                    <option value="3">一月</option>
+                                                    <option value="4">一年</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                               <label>起始时间</label> 
+                                               <input class="form-control" type="text" value="2012-05-15" id="datetimepicker_network">
+                                               <span class="add-on"><i class="icon-th"></i></span>
+                                            </div>
+                                            <div class="col-sm-1"></div>
+                                        </div>
+                                     </div>
+                                </fieldset>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /.row -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">传输层统计</div>
+                     <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                
+                                <div class="panel-body" id="transport">
+                                    <div id="transport-chart" style="height: 300px;width:auto"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form role="form" method="post">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class= "row">
+                                            <div class="col-sm-1"></div>
+                                            <div class="col-sm-2">
+                                               <label>链路</label> 
+                                               <select class="form-control" id="select_router_transport"  onChange="get_netflow_transport(0)">
+                                                    <option value="0">ALL</option>
+                                                    <option value="1">THU</option>
+                                                    <option value="2">PKU</option>
+                                                    <option value="3">BUPT</option>
+                                                    <option value="4">BUAA</option>
+                                                    <option value="5">Fudan</option>
+                                                    <option value="6">HUST</option>
+                                                    <option value="7">Tongji</option>
+                                                    <option value="8">CQU</option>
+                                                    <option value="9">CSU</option>
+                                                    <option value="10">DLUT</option>
+                                                    <option value="11">HIT</option>
+                                                    <option value="12">JLU</option>
+                                                    <option value="13">LZU</option>
+                                                    <option value="14">NEU</option>
+                                                    <option value="15">SCUT</option>
+                                                    <option value="16">SDU</option>
+                                                    <option value="17">SEU</option>
+                                                    <option value="18">SJTU</option>
+                                                    <option value="19">TJU</option>
+                                                    <option value="20">UESTC</option>
+                                                    <option value="21">USTC</option>
+                                                    <option value="22">XJTU</option>
+                                                    <option value="23">XMU</option>
+                                                    <option value="24">ZJU</option>
+                                                    <option value="25">ZZU</option>
+                                                </select>          
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label>单位</label> 
+                                                <select class="form-control" id="select_type_transport" onChange="get_netflow_transport(0)">
+                                                    <option value="1">fps</option>
+                                                    <option value="2">pps</option>
+                                                    <option value="3">bps</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label>协议类型</label> 
+                                                <select class="form-control" id="select_protocol_transport" onChange="get_netflow_transport(0)">
+                                                    <option value="0">ALL</option>
+                                                    <option value="2">TCP</option>
+                                                    <option value="3">UDP</option>
+                                                    <option value="1">ICMP</option>
+                                                    <option value="4">OTHER</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label>时间跨度</label> 
+                                                <select class="form-control" id="select_period_transport" onChange="get_netflow_transport(0)">
+                                                    <option value="0">实时</option>
+                                                    <option value="1">一天</option>
+                                                    <option value="2">一周</option>
+                                                    <option value="3">一月</option>
+                                                    <option value="4">一年</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                               <label>起始时间</label> 
+                                               <input class="form-control" type="text" value="2012-05-15" id="datetimepicker_transport">
+                                               <span class="add-on"><i class="icon-th"></i></span>
+                                            </div>
+                                            <div class="col-sm-1"></div>
+                                        </div>
+                                     </div>
+                                </fieldset>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">TopN Ports</div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body" id="TopN" style="height:350px;border:1px solid #ccc;padding:10px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Flow Duration</div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body" id="Duration" style="height:350px;border:1px solid #ccc;padding:10px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Flow Size</div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body" id="Size" style="height:350px;border:1px solid #ccc;padding:10px;">
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /#page-wrapper -->
+        </div>
+        <!-- /#wrapper -->
+
+       
+
+    </body>
+
+    </html>

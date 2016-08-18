@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>测量大数据分析管理平台</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="../dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index3.html">测量大数据分析管理平台</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>                   
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+				</li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+       <!--                 <li>
+                            <a href="index.html">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> 流量监控界面
+                                    <span class="pull-right text-muted small">运行人员</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>    --> 
+                        <li>
+                            <a href="index2.html">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 流量数据管理界面
+                                    <span class="pull-right text-muted small">研究人员</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+          <!--          <li>
+                            <a href="index3.html">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> 集群管理界面
+                                    <span class="pull-right text-muted small">管理人员</span>
+                                </div>
+                            </a>
+                        </li>   -->                     
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> 用户信息</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> 注销</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">                        
+                        <li>
+                            <a href="index2.html"><i class="fa fa-dashboard fa-fw"></i> 首页<span class="fa arrow"></span></a>                            
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 数据集<span class="fa arrow"></span></a> 
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="dataset_page.html">标准数据集</a>
+                                </li>
+                                <li>
+                                    <a href="dataset_mypage.html">我的数据集</a>                                   
+                                </li>                                
+                            </ul>                             
+                        </li>
+                        <li>
+                           	<a href="collect_dataset.html"><i class="fa fa-table fa-fw"></i> 采集申请<span class="fa arrow"></span></a> 
+                        </li>                    
+                        <li>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> 应用<span class="fa arrow"></span></a> 
+                        </li>                        
+                        <li>
+                            <a href="#"><i class="fa fa-gear fa-fw"></i> 设置<span class="fa arrow"></span></a>                           
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="page-header">OneYear Dataset</h3>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            
+            <div class="row">
+            
+                 <div class="col-lg-12">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <b>平台介绍</b>
+                        </div>
+                        <div class="panel-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                             <b>数据集介绍</b>
+                        </div>
+                        <div class="panel-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                            <p>状态：进行中</p>
+                            <p>匿名化方式：Crypto-PAn</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                             <b>采集策略</b>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                                                                                                        数据集名称：oneyear
+                                                                                                                        
+                            </p>
+                            <p>    
+                                                                                                                        采集开始时间：2016-04-28 20:00                                                                                    
+                                                                                                                        采集时长：1小时
+                                                                                                                        采集周期：一年 （12个月每月28日采集20:00-21:00数据1小时）                                                                                                                                                                                                      
+                            </p>
+                            <p>
+                                 	 采集链路：No.2  &nbsp&nbsp&nbsp  采集编号：3 
+                            </p>
+                            <p>
+                                                                                                                       过滤条件： 
+                            
+                                srcport：null &nbsp&nbsp&nbsp dstport：null &nbsp&nbsp&nbsp srcip:null &nbsp&nbsp&nbsp dstip:null &nbsp&nbsp&nbsp protocol:null 
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <b>数据集下载</b> 
+                        </div>
+                        <div class="panel-body">
+                            <a href="http://localhost:8080/BigDataPlatform/js/dataset.js">oneyear_2016</a>
+                        </div>
+
+                    </div>
+                </div>
+            
+            </div>
+                       
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+	<script src="../js/jquery.blockUI.js"></script>
+	
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+  
+     
+</body>
+
+</html>
