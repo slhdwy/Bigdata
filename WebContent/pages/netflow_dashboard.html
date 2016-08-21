@@ -38,7 +38,7 @@
 
     </head>
 
-    <body onload="get_netflow_stat(1, 1)">
+    <body onload="get_netflow_stat(1, 1)" onresize="get_netflow_stat(1, 1)">
 
 		<!-- jQuery -->
         <script src="../bower_components/jquery/dist/jquery.min.js"></script>
@@ -229,7 +229,7 @@
                             <div class="panel panel-default">
                                 <div id="flows-day-heading" class="panel-heading"></div>
                                 <div class="panel-body" id="div1">
-                                    <div id="flows-day-chart" style="height:200px;width:full"></div>
+                                    <div id="flows-day-chart" style="height:200px;width:auto"></div>
                                 </div>
                                 
                             </div>
@@ -240,7 +240,7 @@
                             <div class="panel panel-default">
                                 <div id="packets-day-heading" class="panel-heading"></div>
                                 <div class="panel-body" id="div1">
-                                    <div id="packets-day-chart" style="height: 200px;width:auto"></div>
+                                    <div id="packets-day-chart" style="height: 220px;width:auto"></div>
                                 </div>
                             </div>  
                             <!-- /.panel -->
@@ -250,7 +250,7 @@
                             <div class="panel panel-default">
                                 <div id="bytes-day-heading" class="panel-heading"></div>
                                 <div class="panel-body" id="div1">
-                                    <div id="bytes-day-chart" style="height: 200px;width:auto"></div>
+                                    <div id="bytes-day-chart" style="height: 220px;width:auto"></div>
                                 </div>
                                 
                             </div>

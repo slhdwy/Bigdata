@@ -38,7 +38,7 @@
 
     </head>
 
-    <body onload="get_netflow_monitor('main-heading')">
+    <body onload="get_netflow_monitor('main-heading')" onresize="get_netflow_monitor('first-heading')">
 		
 		<!-- jQuery -->
         <script src="../bower_components/jquery/dist/jquery.min.js"></script>
@@ -211,52 +211,57 @@
                 <!-- /.row -->
 
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-6">
                             <div class="panel panel-default">
                                 <div class="panel-heading"><a id="first-heading" value=1 onClick="get_netflow_monitor('first-heading')"></a></div>
                                 <div class="panel-body" id="div1">
-                                    <div id="first-chart" style="height:150px;width:full"></div>
+                                    <div id="first-chart" style="height:200px;width:auto"></div>
                                 </div>
                                 
                             </div>
                             <!-- /.panel -->
                         
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-lg-6">
                             <div class="panel panel-default">
                                 <div class="panel-heading"><a id="second-heading" value=2 onClick="get_netflow_monitor('second-heading')"></div>
                                 <div class="panel-body" id="div1">
-                                    <div id="second-chart" style="height: 150px;width:auto"></div>
+                                    <div id="second-chart" style="height: 200px;width:auto"></div>
                                 </div>
                             </div>  
                             <!-- /.panel -->
                             
                     </div>
-                    <div class="col-md-3">
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
                         <div class="panel panel-default">
                             <div class="panel-heading"><a id="third-heading" value=3 onClick="get_netflow_monitor('third-heading')"></div>
                             <div class="panel-body" id="div1">
-                                <div id="third-chart" style="height: 150px;width:auto"></div>
+                                <div id="third-chart" style="height: 200px;width:auto"></div>
                             </div>
-                            
+
                         </div>
                         <!-- /.panel -->
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-lg-6">
                         <div class="panel panel-default">
                             <div class="panel-heading"><a id="fourth-heading" value=4 onClick="get_netflow_monitor('fourth-heading')"></div>
                             <div class="panel-body" id="div1">
-                                <div id="fourth-chart" style="height: 150px;width:auto"></div>
+                                <div id="fourth-chart" style="height: 200px;width:auto"></div>
                             </div>
-                            
+
                         </div>
                         <!-- /.panel -->
-                        
                     </div>
                 </div>
+
                 <div class="row">
                     
-                    <div class="col-lg-9">
+                    <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-heading"><a id="main-heading" value='0' onClick="get_netflow_monitor('main-heading')">ALL</div>
                             <div class="panel-body" id="div1">
@@ -266,8 +271,9 @@
                         <!-- /.panel -->
                         
                     </div>
-
-                    <div class="col-lg-3">
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
                         <div class="row">
                             <table class="table" id="monitor_table">
                                 

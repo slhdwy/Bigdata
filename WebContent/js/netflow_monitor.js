@@ -80,18 +80,19 @@ function get_netflow_monitor(headingName){
 			        },
 			        calculable : true,
 			        grid : {
-			        		x:30,
-			        		y:4,
-			        		x2:1,
-			        		y2:15
+			        		x:58,
+			        		y:5,
+			        		x2:30,
+			        		y2:40
 			        },
 			        xAxis : [
 			            {
 			                type : 'category',
 			                boundaryGap : false,
+                            interval: 0,
 			                axisLabel:{
-			                	margin:1,
-			                	textStyle:{fontSize:9}
+			                	margin:5,
+			                	textStyle:{fontSize:10}
 			                },
 			                data : TIME
 			            }
@@ -101,8 +102,11 @@ function get_netflow_monitor(headingName){
 			                type : 'log',
 			                show : true,
 			                axisLabel:{
-			                	margin:1,
-			                	textStyle:{fontSize:9}
+			                	margin:5,
+			                	textStyle:{fontSize:10},
+								formatter: function(y) {
+									return num2e(y);
+								}
 			                },
 			                logLabelBase : 10
 			                
@@ -158,7 +162,7 @@ function get_table_info(page_index){
 			FLOWS = data.FLOWS
 			PACKETS = data.PACKETS
 			BYTES = data.BYTES
-			var html = "<thead><tr><th>Router</th><th>Flows/s</th><th>Packets/s</th><th>Bytes/s</th></tr></thead><tbody>";
+			var html = "<thead><tr><th>Router</th><th>Flows/s</th><th>Packets/s</th><th>Bit/s</th></tr></thead><tbody>";
 			for(num = 0; num < 9; num++){
 				html = html + "<tr class=\"gradeU\"><td></td><td></td><td></td><td></td></tr>"
 			}
@@ -190,4 +194,12 @@ function get_table_info(page_index){
 		}
 
 	});
+}
+function num2e(num){
+	if(num == 0 || num<=100){
+		return num;
+	}
+    var p = Math.floor(Math.log(num)/Math.LN10);
+    var n = num / Math.pow(10, p);
+    return n + 'x10^' + p;
 }
